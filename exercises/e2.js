@@ -4,7 +4,21 @@
 
 export function getNumbersWithSquareRoots(max) {
   // Your code goes here...
-
+  let squaredNumbers = [];
+  let number = null;
+  
+  for(let i = 0; i <= max; i++) {
+    number = Math.sqrt(i);
+    
+    if(number % 1 == 0) {
+      squaredNumbers.push(i);
+    }
+    else {
+      console.log(i + ' is not a squared number.')
+    }
+  }
+  
+  return squaredNumbers
 }
 
 // === TEST YOURSELF ===
