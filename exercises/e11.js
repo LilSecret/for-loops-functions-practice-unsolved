@@ -6,7 +6,34 @@
 
 export function getAllWithdrawals(array) {
   // Your code goes here...
+  let total = 0;
+  let sumOfWithdrawals = [];
+  
+  //loop through all items in array
+  for ( let i = 0; i < array.length; i++ ) {
+    //Check to see if item has property
+    if ( array[i].hasOwnProperty( 'withdrawals' ) == true ) {
+      //total all numbers 
+      for ( let j = 0; j < array[i].withdrawals.length; j++ ) {
+        if ( j == 0 ) {
+          total = array[i].withdrawals[0];
+        }
+        
+        else {
+          total = total + array[i].withdrawals[j];
+        }
+      }
+      
+      sumOfWithdrawals.push( total );
+    }
 
+    else {
+      total = 0;
+      sumOfWithdrawals.push( total );
+    }
+  }
+  
+  return sumOfWithdrawals
 }
 
 // === TEST YOURSELF ===
