@@ -35,9 +35,11 @@ export function getStringSum(string) {
   let numbersInString = string.match(/\d+/g);
   let total = 0;
   
-  for ( let i = 0; i < numbersInString.length; i++ ) {
-    for ( let j = 0; j < numbersInString[i].length; j++ ) {
-      allNumbers.push( parseInt( numbersInString[i].charAt(j) ) );
+  if ( numbersInString != null ) {
+    for ( let i = 0; i < numbersInString.length; i++ ) {
+      for ( let j = 0; j < numbersInString[i].length; j++ ) {
+        allNumbers.push( parseInt( numbersInString[i].charAt( j ) ) );
+      }
     }
   }
   
@@ -46,7 +48,7 @@ export function getStringSum(string) {
       total = allNumbers[i];
     }
 
-    else if ( total >= allNumbers[0] ) {
+    else {
       total = total + allNumbers[i];
     }
   }
