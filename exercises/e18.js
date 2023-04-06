@@ -4,10 +4,10 @@
 // joinToString(['a', 'b', 'c'], '-') => 'a-b-c'
 // NOTE: You can NOT use the array.join(), array.toString(), and array.replace() methods in your code
 
-export function joinToString( array, separator ) {
+export function joinToString(array, separator) {
   let item = 'Devslopes is teaching me FOR loops and functions !';
   //your code goes here
-  for ( let i = 0; i < array.length; i++ ) {
+  for (let i = 0; i < array.length; i++) {
     if (separator == '') {
       if ( i == 0 ) {
         item = array[i];
@@ -17,9 +17,9 @@ export function joinToString( array, separator ) {
       }
     }
     
-    if ( separator == '-') {
-      if ( i == 0 ) {
-        item = array[i]
+    if (separator == '-') {
+      if (i == 0) {
+        item = array[i];
       }
       else {
         item = item + '-';
@@ -27,8 +27,8 @@ export function joinToString( array, separator ) {
       }
     }
     
-    if ( separator == undefined) {
-      if ( i == 0 ) {
+    if (separator == undefined) {
+      if (i == 0) {
         item = array[i];
       }
       else {
@@ -38,8 +38,7 @@ export function joinToString( array, separator ) {
     }
   }
   
-  
-  return item
+  return item;
 }
 
 // === TEST YOURSELF ===

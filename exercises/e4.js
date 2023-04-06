@@ -7,8 +7,8 @@ export function findMinValueInArray(array) {
   // Your code goes here...
   let min = null;
   
-  for(let i = 0; i < array.length; i++) {
-    if(min == null) {
+  for (let i = 0; i < array.length; i++) {
+    if (min == null) {
       min = array[i];
     }
     else if (min < array[i]) {
@@ -19,15 +19,15 @@ export function findMinValueInArray(array) {
     }
   }
   
-  return min
+  return min;
 }
 
 export function findMaxValueInArray(array) {
   // Your code goes here...
   let max = null;
   
-  for(let i = 0; i < array.length; i++) {
-    if(max == null) {
+  for (let i = 0; i < array.length; i++) {
+    if (max == null) {
       max = array[i];
     }
     else if (max > array[i]) {
@@ -38,7 +38,7 @@ export function findMaxValueInArray(array) {
     }
   }
   
-  return max
+  return max;
 }
 
 // === TEST YOURSELF ===

@@ -35,25 +35,21 @@ export function getStringSum(string) {
   let numbersInString = string.match(/\d+/g);
   let total = 0;
   
-  if ( numbersInString != null ) {
-    for ( let i = 0; i < numbersInString.length; i++ ) {
-      for ( let j = 0; j < numbersInString[i].length; j++ ) {
-        allNumbers.push( parseInt( numbersInString[i].charAt( j ) ) );
+  if (numbersInString != null) {
+    for (let i = 0; i < numbersInString.length; i++) {
+      for (let j = 0; j < numbersInString[i].length; j++) {
+        allNumbers.push(parseInt(numbersInString[i].charAt(j)));
       }
     }
   }
   
-  for ( let i = 0; i < allNumbers.length; i++ ) {
-    if ( total == 0 ) {
-      total = allNumbers[i];
-    }
+  for (let i = 0; i < allNumbers.length; i++) {
+    if (total == 0) total = allNumbers[i];
 
-    else {
-      total = total + allNumbers[i];
-    }
+    else total = total + allNumbers[i];
   }
   
-  return total
+  return total;
 }
 
 // === TEST YOURSELF ===

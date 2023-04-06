@@ -9,24 +9,24 @@ export function getClientWithLeastPositiveBalance( array ) {
   let lowestAccount = [];
   let lowestBalance = null;
   
-  for ( let i = 0; i < array.length; i++ ) {
-    if ( i == 0 ) {
+  for (let i = 0; i < array.length; i++) {
+    if (i == 0) {
       lowestAccount.push( array[i] );
       lowestBalance = array[i].balance;
     }
     
-    else if ( lowestBalance > array[i].balance && array[i].balance > 0 ) {
+    else if (lowestBalance > array[i].balance && array[i].balance > 0) {
       lowestAccount[0] = array[i];
       lowestBalance = array[i].balance;
     }
     
-    if ( array[i].balance < 0 ) {
+    if (array[i].balance < 0) {
       lowestAccount = [];
-      return lowestAccount
+      return lowestAccount;
     }
   }
   
-  return lowestAccount
+  return lowestAccount;
 }
 
 // === TEST YOURSELF ===

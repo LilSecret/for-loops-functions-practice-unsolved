@@ -10,12 +10,12 @@ export function getAllWithdrawals(array) {
   let sumOfWithdrawals = [];
   
   //loop through all items in array
-  for ( let i = 0; i < array.length; i++ ) {
+  for (let i = 0; i < array.length; i++) {
     //Check to see if item has property
-    if ( array[i].hasOwnProperty( 'withdrawals' ) == true ) {
+    if (array[i].hasOwnProperty( 'withdrawals' ) == true) {
       //total all numbers 
-      for ( let j = 0; j < array[i].withdrawals.length; j++ ) {
-        if ( j == 0 ) {
+      for (let j = 0; j < array[i].withdrawals.length; j++) {
+        if (j == 0) {
           total = array[i].withdrawals[0];
         }
         
@@ -24,16 +24,16 @@ export function getAllWithdrawals(array) {
         }
       }
       
-      sumOfWithdrawals.push( total );
+      sumOfWithdrawals.push(total);
     }
 
     else {
       total = 0;
-      sumOfWithdrawals.push( total );
+      sumOfWithdrawals.push(total);
     }
   }
   
-  return sumOfWithdrawals
+  return sumOfWithdrawals;
 }
 
 // === TEST YOURSELF ===

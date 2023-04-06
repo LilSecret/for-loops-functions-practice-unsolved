@@ -53,7 +53,7 @@ export function getClientsWithWrongBalance(array) {
     }
   }
 
-  return accountsWithIncorrectBalance
+  return accountsWithIncorrectBalance;
 }
 
 
