@@ -30,26 +30,15 @@ export function getAverage(array) {
  * */ 
 
 export function getStringSum(string) {
-  // Your code goes here...
-  let allNumbers = [];
-  let numbersInString = string.match(/\d+/g);
-  let total = 0;
-  
-  if (numbersInString != null) {
-    for (let i = 0; i < numbersInString.length; i++) {
-      for (let j = 0; j < numbersInString[i].length; j++) {
-        allNumbers.push(parseInt(numbersInString[i].charAt(j)));
-      }
+  let sum = 0;
+
+  for (let char of string) {
+    if (!isNaN(char)) {
+      sum += +char;
     }
   }
-  
-  for (let i = 0; i < allNumbers.length; i++) {
-    if (total == 0) total = allNumbers[i];
 
-    else total = total + allNumbers[i];
-  }
-  
-  return total;
+  return sum;
 }
 
 // === TEST YOURSELF ===

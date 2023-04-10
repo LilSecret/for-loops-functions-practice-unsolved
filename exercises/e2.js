@@ -8,8 +8,9 @@ export function getNumbersWithSquareRoots(max) {
   
   for(let i = 0; i <= max; i++) {
     let numberSquared = Math.sqrt(i);
-    
-    if(numberSquared % 1 == 0) squaredNumbers.push(i);
+    if(numberSquared % 1 === 0) {
+      squaredNumbers.push(i);
+    }
   }
   
   return squaredNumbers;
