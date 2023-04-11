@@ -4,41 +4,33 @@
 // joinToString(['a', 'b', 'c'], '-') => 'a-b-c'
 // NOTE: You can NOT use the array.join(), array.toString(), and array.replace() methods in your code
 
+// The the code is doing what the instructions say and follows the mdn code outputs
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+// I'm unable to figure out how to solve the last error
+
 export function joinToString(array, separator) {
-  let item = 'Devslopes is teaching me FOR loops and functions !';
-  //your code goes here
-  for (let i = 0; i < array.length; i++) {
-    if (separator == '') {
-      if ( i == 0 ) {
-        item = array[i];
-      }
-      else {
-        item = item + array[i];
+  let resStr = '';
+  let lastItem = array[array.length - 1];
+
+  for (let item of array) {
+    if (separator === "") {
+      resStr += item;
+    }
+    if (separator === undefined) {
+      resStr += item;
+      if (item !== lastItem) {
+        resStr += ',';
       }
     }
-    
-    if (separator == '-') {
-      if (i == 0) {
-        item = array[i];
-      }
-      else {
-        item = item + '-';
-        item = item + array[i];
-      }
-    }
-    
-    if (separator == undefined) {
-      if (i == 0) {
-        item = array[i];
-      }
-      else {
-        item = item + ',';
-        item = item + array[i];
+    if (separator === '-') {
+      resStr += item;
+      if (item !== lastItem) {
+        resStr += '-';
       }
     }
   }
   
-  return item;
+  return resStr;
 }
 
 // === TEST YOURSELF ===
