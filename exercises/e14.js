@@ -9,37 +9,27 @@ export function getClientsWithWrongBalance(array) {
   let accountsWithIncorrectBalance = [];
   
   //loop through all items
-  for (let i = 0; i < array.length; i++) {
+  for (let account of array) {
     let totalDeposits = 0;
     let totalWithdrawals = 0;
     
     // if account has property ~ get the total
-    if (array[i].hasOwnProperty('withdrawals')) {
-      for (let j = 0; j < array[i].withdrawals.length; j++) {
-        if (j == 0) {
-          totalWithdrawals = array[i].withdrawals[0];
-        }
-        else {
-          totalWithdrawals = totalWithdrawals + array[i].withdrawals[j];
-        }
+    if (account.hasOwnProperty('withdrawals')) {
+      for (let withdrawal of account.withdrawals) {
+        totalWithdrawals += withdrawal;
       }
     }
 
-    if (array[i].hasOwnProperty('deposits')) {
-      for (let j = 0; j < array[i].deposits.length; j++) {
-          if (j == 0) {
-            totalDeposits = array[i].deposits[0];
-          }
-          else {
-            totalDeposits = totalDeposits + array[i].deposits[j];
-          }
+    if (account.hasOwnProperty('deposits')) {
+      for (let deposit of account.deposits) {
+          totalDeposits += deposit;
         }
       }
 
       let actualBalance = totalDeposits - totalWithdrawals;
     
-      if (actualBalance != array[i].balance) {
-        accountsWithIncorrectBalance.push(array[i]);
+      if (actualBalance != account.balance) {
+        accountsWithIncorrectBalance.push(account);
       }
     }
 

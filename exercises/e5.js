@@ -7,14 +7,14 @@
 import { bankAccounts } from "../data/data";
 
 export function getAllClientNames(array) {
-  // Your code goes here...
-  let clients = [];
+  let holderNames = [];
   
-  for (let i = 0; i < array.length; i++) clients.push(array[i].name);
+  for (let account of array) {
+    holderNames.push(account.name);
+  }
   
-  return clients;
+  return holderNames;
 }
-  
 
 
 // === TEST YOURSELF ===

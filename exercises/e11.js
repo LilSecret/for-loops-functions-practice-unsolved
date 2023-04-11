@@ -5,32 +5,18 @@
 // getAllWithdrawals(bankAccounts) => [3432, 0, 43242.34, 0, 23432]
 
 export function getAllWithdrawals(array) {
-  // Your code goes here...
-  let total = 0;
   let sumOfWithdrawals = [];
-  
-  //loop through all items in array
-  for (let i = 0; i < array.length; i++) {
-    //Check to see if item has property
-    if (array[i].hasOwnProperty( 'withdrawals' ) == true) {
-      //total all numbers 
-      for (let j = 0; j < array[i].withdrawals.length; j++) {
-        if (j == 0) {
-          total = array[i].withdrawals[0];
-        }
-        
-        else {
-          total = total + array[i].withdrawals[j];
-        }
+
+  for (let account of array) {
+    let sum = 0;
+
+    if (account.hasOwnProperty('withdrawals')) {
+      for (let withdrawal of account.withdrawals) {
+        sum += withdrawal;
       }
-      
-      sumOfWithdrawals.push(total);
     }
 
-    else {
-      total = 0;
-      sumOfWithdrawals.push(total);
-    }
+    sumOfWithdrawals.push(sum);
   }
   
   return sumOfWithdrawals;

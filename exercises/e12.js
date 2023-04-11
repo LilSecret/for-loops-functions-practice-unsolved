@@ -7,14 +7,11 @@
 export function getAllDepositsGreaterThanOneHundred(array) {
   let depositsGreaterThanOneHundred = [];
 
-  // loop through all accounts
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].hasOwnProperty('deposits') == true) {
-      for (let j = 0; j < array[i].deposits.length; j++) {
-        let item = array[i].deposits[j];
-
-        if (item > 100) {
-          depositsGreaterThanOneHundred.push( item );
+  for (let account of array) {
+    if (account.hasOwnProperty('deposits')) {
+      for (let deposit of account.deposits) {
+        if (deposit > 100) {
+          depositsGreaterThanOneHundred.push(deposit);
         }
       }
     }

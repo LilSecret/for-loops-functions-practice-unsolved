@@ -6,8 +6,8 @@
 // NOTE: You can NOT use the array.includes() method in your code
 
 export function doesArrayInclude(array, value) {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] == value) {
+  for (let item of array) {
+    if (item === value) {
       return true;
     }
   }

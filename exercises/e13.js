@@ -6,35 +6,27 @@
 
 export function getAllAccountsWithSumsOfDepositsLess2000(array) {
   // Your code goes here...
-  let depositsLessThanOneHundred = [];
-  let total = 0;
-
-  //loop through all accounts
-  for (let i = 0; i < array.length; i++) {
-    //with deposits
-    if (array[i].hasOwnProperty( 'deposits' ) == true) {
-       //get total of deposits
-       for (let j = 0; j < array[i].deposits.length; j++) {
-         if (j == 0) {
-           total = array[i].deposits[0];
-         }
-         
-         else {
-           total = total + array[i].deposits[j];
-         }
-       }
+  let depositsLessThan2000 = [];
+  
+  for (let account of array) {
+    let depositsTotal = 0;
+    if (account.hasOwnProperty('deposits')) {
+      for (let deposit of account.deposits) {
+        depositsTotal += deposit;
+      }
       
-       if (total < 2000) {
-         depositsLessThanOneHundred.push(array[i]);
-       }
+      if (depositsTotal < 2000) {
+        depositsLessThan2000.push(account);
+      }
+
     }
-    //without deposits
+
     else {
-      depositsLessThanOneHundred.push(array[i]);
+      depositsLessThan2000.push(account);
     }
   }
 
-  return depositsLessThanOneHundred;
+  return depositsLessThan2000;
 }
 
 
