@@ -6,28 +6,19 @@
 // NOTE: You MUST use double/nested FOR loop to solve this exercise. The array.includes() method is NOT allowed.
 
 export function separateNamesWithAFromRest(array) {
-  let arrayWithA = [];
-  let otherNames = [];
-
-  for (let name of array) {
+  let separatedArray = [[], []]
+  for (let i = 0; i < array.length; i++) {
     let nameHasA = false;
-    
-    for (let char of name) {
-      if (char === 'a' || char === 'A') {
+    for (let char of array[i]) {
+      if (char.toLowerCase() === 'a') {
         nameHasA = true;
       }
     }
-    
-    if (nameHasA) {
-      arrayWithA.push(name);
-    }
-    
-    if (!nameHasA) {
-      otherNames.push(name);
-    }
+    const index = nameHasA ? 0 : 1;
+    separatedArray[index].push(array[i]);
   }
 
-  return [arrayWithA, otherNames];
+  return separatedArray;
 }
 
 
