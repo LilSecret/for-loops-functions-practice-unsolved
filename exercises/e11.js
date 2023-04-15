@@ -10,7 +10,7 @@ export function getAllWithdrawals(array) {
   for (let account of array) {
     let sum = 0;
 
-    if (account.hasOwnProperty('withdrawals')) {
+    if ('withdrawals' in account) {
       for (let withdrawal of account.withdrawals) {
         sum += withdrawal;
       }
