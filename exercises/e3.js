@@ -31,13 +31,11 @@ export function getAverage(array) {
 
 export function getStringSum(string) {
   let sum = 0;
-
   for (let char of string) {
     if (!isNaN(char)) {
       sum += +char;
     }
   }
-
   return sum;
 }
 
