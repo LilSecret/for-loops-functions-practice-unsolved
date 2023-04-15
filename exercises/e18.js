@@ -10,23 +10,12 @@
 
 export function joinToString(array, separator) {
   let resStr = '';
-  let lastItem = array[array.length - 1];
-
-  for (let item of array) {
-    if (separator === "") {
-      resStr += item;
-    }
-    if (separator === undefined) {
-      resStr += item;
-      if (item !== lastItem) {
-        resStr += ',';
-      }
-    }
-    if (separator === '-') {
-      resStr += item;
-      if (item !== lastItem) {
-        resStr += '-';
-      }
+  
+  for (let i = 0; i < array.length; i++) {
+    if (i === 0) {
+      resStr += array[i];
+    } else {
+      resStr += separator + array[i];
     }
   }
   
