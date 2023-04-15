@@ -14,24 +14,22 @@ export function getClientsWithWrongBalance(array) {
     let totalWithdrawals = 0;
     
     // if account has property ~ get the total
-    if (account.hasOwnProperty('withdrawals')) {
+    if ('withdrawals' in account) {
       for (let withdrawal of account.withdrawals) {
         totalWithdrawals += withdrawal;
       }
     }
 
-    if (account.hasOwnProperty('deposits')) {
+    if ('deposits' in account) {
       for (let deposit of account.deposits) {
-          totalDeposits += deposit;
-        }
-      }
-
-      let actualBalance = totalDeposits - totalWithdrawals;
-    
-      if (actualBalance != account.balance) {
-        accountsWithIncorrectBalance.push(account);
+        totalDeposits += deposit;
       }
     }
+
+    if (totalDeposits - totalWithdrawals != account.balance) {
+      accountsWithIncorrectBalance.push(account);
+    }
+  }
 
   return accountsWithIncorrectBalance;
 }
